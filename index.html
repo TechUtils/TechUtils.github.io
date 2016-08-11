@@ -4,46 +4,63 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
-    <script type="text/javascript" src="javascripts/jquery-1.11.1.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="resources/stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="resources/stylesheets/github-dark.css" media="screen">
+    <script type="text/javascript" src="resources/javascripts/jquery-1.11.1.min.js"></script>
     <link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
     <title>Techutils.in by TechUtils</title>
+    <style type="text/css">
+    #frank_logo {
+        background: white;
+        border-radius: 10px;
+        padding: 2px;
+        margin-left: 10px;
+    }
+    </style>
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>Techutils.in</h1>
+            <h1>Fr<span class="dynamo" data-speed="500" data-delay="750" data-lines="a, ,_,-">_</span>nk<span class="dynamo" data-speed="500" data-delay="1500" data-lines="NLP,enstien,Bot">Spider</span><img id="frank_logo" src="resources/images/frankenstein.png" height="30px" width="30px"></h1>
             <h2>Applying Logic...where needed</h2>
-            <section id="downloads">
-                <a href="https://github.com/TechUtils" target="_blank" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
-            </section>
         </div>
     </header>
     <div class="container">
-        <section id="main_content">
-            <h3>
-<a id="welcome-to-techutilsin-github-pages" class="anchor"  target="_blank" href="#welcome-to-techutilsin-github-pages" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to TechUtils.in GitHub Pages.</h3>
-            <p>This site is to document and showcase the items that are created and published by <a href="http://TechUtils.in">TechUtils.in</a>.</p>
-            <h3>Projects</h3>    
-                <ul>
-                    <li><a href="/fr_nkenstein/" class="btn btn-github"><span class="icon"></span>Fr<span class="dynamo" data-speed="500" data-delay="1000" data-lines="a, ,_,-">_</span>nkenstien</a></li>
-                    <li><a href="/Fr_nkNLP/" class="btn btn-github"><span class="icon"></span>Fr<span class="dynamo" data-speed="500" data-delay="1000" data-lines="a, ,_,-">_</span>nkNLP</a></li>
-                </ul>
-
-            <h3>
-<a id="author" class="anchor" href="#author" target="_blank"  aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h3>
-            <p>Vineet Verma (<a href="https://github.com/vineetvermait" target="_blank" class="user-mention">@vineetvermait</a>)</p>
-            <h3>
-<a  target="_blank" id="publications" class="anchor" href="#publications" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Publications</h3>
+        <article class="markdown-body entry-content" itemprop="text">
+            <p><strong>Fr_nkenstien</strong> is an umbrella project with an (<code>over</code>)ambitious hope to create an <code>Responsive Open Source AI</code> System.</p>
+            <p><strong>Fr_nkenstien</strong> would be based on the following Open Source Systems </p>
             <ul>
-                <li>Tech eBooks <a target="_blank" href="https://play.google.com/store/apps/details?id=in.techutils.droid.webclient.techbooker">Google Play: Android App</a>
+                <li><a href="https://opennlp.apache.org/">Apache OpenNLP</a>: The module would be used to reading and understanding the incoming sentences and understand the data from the sentences
+                    <ul>
+                        <li>Names</li>
+                        <li>Organizations</li>
+                        <li>Places</li>
+                        <li>Currencies</li>
+                        <li>Times and Dates</li>
+                        <li>Sentiment Analysis</li>
+                        <li>Other Analytics</li>
+                    </ul>
                 </li>
+                <li><a href="http://nutch.apache.org/">Apache Nutch</a>: Open Source Web Crawler to search for topics and gather details to aquire knowledge</li>
+                <li><a href="https://tika.apache.org/">Apache Tika</a>: To understand data from provided Documents and index them</li>
+                <li><a href="http://www.elastic.co/">Elastic Search</a>: Search indexed Memory for knowledge</li>
+                <li><a href="http://www.elastic.co/">Kibana</a>: Reporting to get Admin UI</li>
+                <li><a href="https://neo4j.com/">neo4j</a>: Memory for 'Fr_nkenstien'</li>
+                <li><a href="https://www.mongodb.com/">MongoDB</a>: Secondary Memory</li>
+                <li><a href="http://projects.spring.io/spring-data-rest/">Spring Data REST</a>: REST API Connections for Databases</li>
+                <li><a href="https://zookeeper.apache.org/">ZooKeeper</a>: for Node Management and Availability</li>
+                <li><a href="http://www.drools.org/">Drools</a>: Descision making and workflow maintenance</li>
+                <li><a href="http://synapse.apache.org/">Apache Synape</a>: Service Integrations of all Micro Services</li>
             </ul>
-        </section>
+            <p><code>Fr_nkenstien</code> is still in a <code>zygote</code> form. A lot of work is to be done on the same to be able to come anywhere near realtime.</p>
+            <p>Contributions appreciated.</p>
+            <blockquote>
+                <p>Only English language would supported at the moment</p>
+            </blockquote>
+        </article>
     </div>
-    <script type="text/javascript" src="javascripts/dynamo.min.js" />
+    <script type="text/javascript" src="resources/javascripts/dynamo.min.js" />
     <script type="text/javascript">
     $(function() {
         $('.dynamo').dynamo()
