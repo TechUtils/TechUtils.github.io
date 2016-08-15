@@ -6,7 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <link rel="stylesheet" type="text/css" href="resources/stylesheets/stylesheet.css" media="screen">
     <link rel="stylesheet" type="text/css" href="resources/stylesheets/github-dark.css" media="screen">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
     <script type="text/javascript" src="resources/javascripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="resources/javascripts/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="resources/javascripts/hello.all.js"></script>
+    <script type="text/javascript" src="resources/javascripts/API_KEY.js"></script>
+    <script type="text/javascript" src="resources/javascripts/oauth_twitter.js"></script>
+    <script type="text/javascript">
+    function login(network) {
+        var twitter = hello(network);
+        twitter.login().then(function(r) {
+                return twitter.api('me');
+            }, log)
+            .then(function(p) {
+                document.getElementById('login').innerHTML = "<img src='" + p.thumbnail + "' width=24/>Connected to " + network + " as " + p.name;
+            }, log);
+    }
+
+    function log() {
+        console.log(arguments);
+    }
+    </script>
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <title>Techutils.in by TechUtils</title>
     <style type="text/css">
@@ -16,6 +36,16 @@
         padding: 2px;
         margin-left: 10px;
     }
+    
+    #login {
+        /*outline: 1px red solid;*/
+        align-content: center;
+        display: block;
+    }
+    
+    #login * {
+        margin: 1px auto;
+    }
     </style>
 </head>
 
@@ -24,44 +54,68 @@
         <div class="container">
             <h1>Fr<span class="dynamo" data-speed="500" data-delay="750" data-lines="a, ,_,-">_</span>nk<span class="dynamo" data-speed="500" data-delay="1500" data-lines="NLP,enstien,Bot">Spider</span><img id="frank_logo" src="resources/images/frankenstein.png" height="30px" width="30px"></h1>
             <h2>Applying Logic...where needed</h2>
+            <section id="login">
+                <button class="btn btn-github" onclick="login('twitter');"><span class="icon"></span>&nbsp; Login with Twitter</button>
+                <!-- <a id="twitterLogin" href="#" class="btn btn-github"><img src="resources/images/logintwitter.png" width="30px" height="30px">&nbsp;Login with twitter</a> -->
+            </section>
         </div>
     </header>
     <div class="container">
-        <article class="markdown-body entry-content" itemprop="text">
-            <p><strong>Fr_nkenstien</strong> is an umbrella project with an (<code>over</code>)ambitious hope to create an <code>Responsive Open Source AI</code> System.</p>
-            <p><strong>Fr_nkenstien</strong> would be based on the following Open Source Systems </p>
-            <ul>
-                <li><a href="https://opennlp.apache.org/">Apache OpenNLP</a>: The module would be used to reading and understanding the incoming sentences and understand the data from the sentences
-                    <ul>
-                        <li>Names</li>
-                        <li>Organizations</li>
-                        <li>Places</li>
-                        <li>Currencies</li>
-                        <li>Times and Dates</li>
-                        <li>Sentiment Analysis</li>
-                        <li>Other Analytics</li>
-                    </ul>
-                </li>
-                <li><a href="http://nutch.apache.org/">Apache Nutch</a>: Open Source Web Crawler to search for topics and gather details to aquire knowledge</li>
-                <li><a href="https://tika.apache.org/">Apache Tika</a>: To understand data from provided Documents and index them</li>
-                <li><a href="http://www.elastic.co/">Elastic Search</a>: Search indexed Memory for knowledge</li>
-                <li><a href="http://www.elastic.co/">Kibana</a>: Reporting to get Admin UI</li>
-                <li><a href="https://neo4j.com/">neo4j</a>: Memory for 'Fr_nkenstien'</li>
-                <li><a href="https://www.mongodb.com/">MongoDB</a>: Secondary Memory</li>
-                <li><a href="http://projects.spring.io/spring-data-rest/">Spring Data REST</a>: REST API Connections for Databases</li>
-                <li><a href="https://zookeeper.apache.org/">ZooKeeper</a>: for Node Management and Availability</li>
-                <li><a href="http://www.drools.org/">Drools</a>: Descision making and workflow maintenance</li>
-                <li><a href="http://synapse.apache.org/">Apache Synape</a>: Service Integrations of all Micro Services</li>
-            </ul>
-            <p><code>Fr_nkenstien</code> is still in a <code>zygote</code> form. A lot of work is to be done on the same to be able to come anywhere near realtime.</p>
-            <p>Contributions appreciated.</p>
-            <blockquote>
-                <p>Only English language would supported at the moment</p>
-            </blockquote>
-        </article>
+        <p><strong>Fr_nkenstien</strong> is an umbrella project with an (<code>over</code>)ambitious hope to create an <code>Responsive Open Source AI</code> System.</p>
+        <p><strong>Fr_nkenstien</strong> would be based on the following Open Source Systems </p>
+        <ul>
+            <li><a href="https://opennlp.apache.org/">Apache OpenNLP</a>: The module would be used to reading and understanding the incoming sentences and understand the data from the sentences
+                <ul>
+                    <li>Names</li>
+                    <li>Organizations</li>
+                    <li>Places</li>
+                    <li>Currencies</li>
+                    <li>Times and Dates</li>
+                    <li>Sentiment Analysis</li>
+                    <li>Other Analytics</li>
+                </ul>
+            </li>
+            <li><a href="http://nutch.apache.org/">Apache Nutch</a>: Open Source Web Crawler to search for topics and gather details to aquire knowledge</li>
+            <li><a href="https://tika.apache.org/">Apache Tika</a>: To understand data from provided Documents and index them</li>
+            <li><a href="http://www.elastic.co/">Elastic Search</a>: Search indexed Memory for knowledge</li>
+            <li><a href="http://www.elastic.co/">Kibana</a>: Reporting to get Admin UI</li>
+            <li><a href="https://neo4j.com/">neo4j</a>: Memory for 'Fr_nkenstien'</li>
+            <li><a href="https://www.mongodb.com/">MongoDB</a>: Secondary Memory</li>
+            <li><a href="http://projects.spring.io/spring-data-rest/">Spring Data REST</a>: REST API Connections for Databases</li>
+            <li><a href="https://zookeeper.apache.org/">ZooKeeper</a>: for Node Management and Availability</li>
+            <li><a href="http://www.drools.org/">Drools</a>: Descision making and workflow maintenance</li>
+            <li><a href="http://synapse.apache.org/">Apache Synape</a>: Service Integrations of all Micro Services</li>
+        </ul>
+        <p><code>Fr_nkenstien</code> is still in a <code>zygote</code> form. A lot of work is to be done on the same to be able to come anywhere near realtime.</p>
+        <p>Contributions appreciated.</p>
+        <blockquote>
+            <p>Only English language would supported at the moment</p>
+        </blockquote>
+    </div>
+    <div id="dialog-form" title="Create new user">
+        <p class="validateTips">All form fields are required.</p>
+        <form>
+            <fieldset>
+                <label for="name">Name</label>
+                <input type="text" name="name" id="name" value="Jane Smith" class="text ui-widget-content ui-corner-all">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" value="jane@smith.com" class="text ui-widget-content ui-corner-all">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" value="xxxxxxx" class="text ui-widget-content ui-corner-all">
+                <!-- Allow form submission with keyboard without duplicating the dialog button -->
+                <input type="submit" tabindex="-1" style="position:absolute; top:-1000px">
+            </fieldset>
+        </form>
     </div>
     <script type="text/javascript" src="resources/javascripts/dynamo.min.js" />
     <script type="text/javascript">
+    hello.init({
+        'twitter': TWITTER_CLIENT_ID
+    }, {
+        redirect_uri: './TwitBob.html',
+        oauth_proxy: OAUTH_PROXY_URL
+    });
+
     $(function() {
         $('.dynamo').dynamo()
     });
